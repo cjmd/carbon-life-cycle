@@ -2,16 +2,30 @@ console.log("Suhh");
 var NUMBER_OF_ROLLS;
 
 function setRolls() {
-	NUMBER_OF_ROLLS = document.getElementById("rollInput").value;
-	console.log(NUMBER_OF_ROLLS);
+	NUMBER_OF_ROLLS = 0;
+	atmosphere = 0; 
+	plants = 0;
+	animals = 0;
+	soil = 0;
+	surfaceOcean = 0;
+	deepOcean = 0;
+	fossilFuels = 0;
+	i = 0;
 	document.getElementById("count").innerHTML = "";
-	lifeCycle();
+	document.getElementById("stage").innerHTML = "";
+	console.log(document.getElementById("rollInput").value);
+	if (document.getElementById("rollInput").value !== "") {
+		NUMBER_OF_ROLLS = document.getElementById("rollInput").value;
+		lifeCycle();
+	}
 }
 
 function reset() {
-	window.location.reload();
+	NUMBER_OF_ROLLS = 0;
+	document.getElementById("count").innerHTML = "";
+	document.getElementById("stage").innerHTML = "";
+	rollInput.value = "";
 }
-
 
 var i = 0;
 
@@ -26,8 +40,6 @@ var soil = 0;
 var surfaceOcean = 0;
 var deepOcean = 0;
 var fossilFuels = 0;
-
-var count; 
 
 function generateCountString() { 
 	return `Atmosphere: ${atmosphere}\n<br>Plants: ${plants}\n<br>Animals: ${animals}\n<br>Soil: ${soil}\n<br>Surface Ocean: ${surfaceOcean}\n<br>Deep Ocean: ${deepOcean}\n<br>Fossil Fuels: ${fossilFuels}`;
@@ -221,12 +233,3 @@ function lifeCycle() {
 	console.log(countResult);
 	document.getElementById("count").innerHTML = countResult;
 }
-
-function clearInput() {
-		rollInput.value = "";
-	}
-
-
-/* document.addEventListener('DOMContentLoaded', function(event) {
-	lifeCycle()
-}); */
