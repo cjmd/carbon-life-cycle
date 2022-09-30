@@ -4,6 +4,7 @@ var NUMBER_OF_ROLLS;
 function setRolls() {
 	NUMBER_OF_ROLLS = document.getElementById("rollInput").value;
 	console.log(NUMBER_OF_ROLLS);
+	document.getElementById("count").innerHTML = "";
 	lifeCycle();
 }
 
